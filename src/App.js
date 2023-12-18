@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Main from './component/Main/main';
+import Main from './component/Main/main/main';
 import Board from './component/Board/Board';  
 import Introduction from './component/Introduction/introduction';
 import Login from './component/login/Login';

@@ -1,8 +1,12 @@
 import React from 'react';
+import Header from '../Main/header/header'
 
 function Board() {
     return (
-        <h1>여긴 게시판 페이지</h1>
+        <>
+            <Header />
+            <h1>여긴 게시판 페이지</h1>
+        </>
     );
 }
 

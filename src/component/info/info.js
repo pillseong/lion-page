@@ -1,8 +1,12 @@
 import React from 'react';
+import Header from '../Main/header/header'
 
 function My_info() {
     return (
-        <h1>여긴 내정보 페이지</h1>
+        <>
+            <Header />
+            <h1>여긴 내정보 페이지</h1>
+        </>
     );
 }
 
