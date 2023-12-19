@@ -11,18 +11,24 @@ import Notice from './component/Notice/Notice';
 import Task from './component/Task/Task';
 import BoardWrite from './component/Board/Board_write';
 
+import Test from './component/Board/Board_test';
+
 function App() {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Main />} />
+                
                 <Route path="/Board" element={<Board />} />
                 <Route path="/BoardWrite" element={<BoardWrite />} />
+
                 <Route path="/Introduction" element={<Introduction />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/info" element={<Info />} />
                 <Route path="/Notice" element={<Notice />} />
                 <Route path="/Task" element={<Task />} />
+
+                <Route path='/test' element={<Test />} />
             </Routes>
         </BrowserRouter>
     );

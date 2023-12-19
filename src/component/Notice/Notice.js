@@ -6,7 +6,7 @@ const executives = [
   {
     role: '프론트엔드',
     members: [
-      { name: '옥주용', position: '프론트장', major: '컴퓨터 공학과' },
+      { name: '옥주용', position: '프론트장', major: '컴퓨터 공학과', git: 'https://github.com/OckJuYong'},
       { name: '정필성', position: '프론트 보조', major: '정보통신 공학과' },
     ],
   },
@@ -31,11 +31,15 @@ function Notice() {
             <div key={index} className={group.role.toLowerCase()}>
                 <br/>
                 {group.members.map((member, memberIndex) => (
-                <div key={memberIndex}>
+                <div key={memberIndex} className='information'>
                     <span>{`${member.name} [${member.position}]`}</span>
                     <p>{member.major}</p>
+                    <a href={member.git} 
+                        className='github' 
+                        target="_blank">
+                            {member.git}
+                    </a>
                     <br />
-                    <hr />
                 </div>
                 ))}
             </div>

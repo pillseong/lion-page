@@ -1,25 +1,32 @@
 .body_info {
     margin-top: 30vh;
-}
-.main_title {
+  }
+  
+  .main_title {
     display: flex;
     justify-content: center;
     align-items: center;
     color: skyblue;
-}
-
-.main_info {
+  }
+  
+  .main_info {
     display: flex;
     justify-content: space-around;
     color: white;
-}
-
-.front {
+  }
+  
+  .front,
+  .back,
+  .information {
     padding: 60px;
     border: 1px solid white;
-}
+  }
+  
+  .information {
+    background-color: rgba(0, 0, 0, 0.7); /* 투명한 배경으로 조절 */
+  }
 
-.back {
-    padding: 60px;
-    border: 1px solid white;
-}
+  .github {
+    text-decoration: none;
+    color: blue
+  }
