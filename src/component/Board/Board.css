@@ -1,0 +1,37 @@
+.Board_title {
+    color: skyblue;
+    display: flex;
+    justify-content: center;
+}
+
+.tum {
+    margin-top: 30vh;
+}
+
+.Board_content {
+    color: white;
+}
+
+.Board_content {
+    margin-top: 20px;
+  }
+  
+  .Board_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .Board_table th, .Board_table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .Board_table th {
+    background-color: #f2f2f2;
+  }
+
+  .ttl {
+    color: black;
+  }

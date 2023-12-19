@@ -18,3 +18,8 @@
     background-color: #333;
     color: #fff;
 }
+
+.header a.active {
+    background-color: skyblue;
+    color: black;
+  }

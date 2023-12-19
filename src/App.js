@@ -9,6 +9,7 @@ import Login from './component/login/Login';
 import Info from './component/info/info';
 import Notice from './component/Notice/Notice';
 import Task from './component/Task/Task';
+import BoardWrite from './component/Board/Board_write';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/Board" element={<Board />} />
+                <Route path="/BoardWrite" element={<BoardWrite />} />
                 <Route path="/Introduction" element={<Introduction />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/info" element={<Info />} />

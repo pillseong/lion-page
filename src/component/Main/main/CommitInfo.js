@@ -10,5 +10,4 @@ const CommitInfo = ({ commit }) => {
     </div>
   );
 };
-
 export default CommitInfo;

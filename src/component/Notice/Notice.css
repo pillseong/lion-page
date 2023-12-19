@@ -1,0 +1,25 @@
+.body_info {
+    margin-top: 30vh;
+}
+.main_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: skyblue;
+}
+
+.main_info {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+.front {
+    padding: 60px;
+    border: 1px solid white;
+}
+
+.back {
+    padding: 60px;
+    border: 1px solid white;
+}
