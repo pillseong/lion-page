@@ -1,3 +1,5 @@
+// board_test.js
+
 import React, { useState, useEffect } from 'react';
 import './board_test.css';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
@@ -5,6 +7,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import Header from '../Main/header/header';
 
 function Board_test() {
+    // 상태 변수 초기화
     const [movieContent, setMoviecontent] = useState({
         title: '',
         content: ''
@@ -13,6 +16,7 @@ function Board_test() {
     const [viewContent, setViewContent] = useState([]);
     const [editor, setEditor] = useState(null);
 
+    // 입력 폼 값 변경 시 호출되는 함수
     const getValue = (e) => {
         const { name, value } = e.target;
         setMoviecontent((prevContent) => ({
@@ -21,14 +25,17 @@ function Board_test() {
         }));
     };
 
+    // movieContent 상태가 업데이트 될 때 로그 출력
     useEffect(() => {
         console.log('Movie Content:', movieContent);
     }, [movieContent]);
 
+    // viewContent 상태가 업데이트 될 때 로그 출력
     useEffect(() => {
         console.log('View Content:', viewContent);
     }, [viewContent]);
 
+    // 폼 초기화 함수
     const clearForm = () => {
         if (editor) {
             // CKEditor 데이터 초기화
@@ -46,6 +53,7 @@ function Board_test() {
                 <div className='eyes'>
                     <h1>자유 게시판 초안 (테스트) </h1>
                     <div className="movie-container">
+                        {/* viewContent를 매핑하여 게시물 출력 */}
                         {viewContent.map((element, index) => (
                             <div key={index}>
                                 <h2>{element.title}</h2>
@@ -56,6 +64,7 @@ function Board_test() {
                     </div>
                 </div>
                 <div className="form-wrapper">
+                    {/* 제목 입력란 */}
                     <input
                         className="title-input"
                         type="text"
@@ -64,6 +73,7 @@ function Board_test() {
                         name="title"
                         value={movieContent.title}  // value 속성 추가
                     />
+                    {/* CKEditor를 사용한 내용 입력 */}
                     <CKEditor
                         editor={ClassicEditor}
                         data={movieContent.content}
@@ -72,6 +82,7 @@ function Board_test() {
                             setEditor(editor);
                         }}
                         onChange={(event, editor) => {
+                            // CKEditor 데이터 변경 시 호출되는 함수
                             const data = editor.getData();
                             setMoviecontent((prevContent) => ({
                                 ...prevContent,
@@ -86,12 +97,14 @@ function Board_test() {
                         }}
                     />
                 </div>
+                {/* 게시물 등록 버튼 */}
                 <button
                     className="submit-button"
                     onClick={() => {
-                        // 나머지 코드
+                        // viewContent 상태 업데이트
                         setViewContent((prevContent) => [...prevContent, { ...movieContent }]);
-                        clearForm();  // clearForm 함수 호출
+                        // 입력 폼 초기화 함수 호출
+                        clearForm();
                     }}
                 >
                     입력

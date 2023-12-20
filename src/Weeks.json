@@ -1,0 +1,140 @@
+[
+    {
+        "id": 1,
+        "student_id": 20201919,
+        "name": "채성수",
+        "email": "tjdtnco@naver.com",
+        "division": "admin",
+        "week": [],
+        "notice": []
+    },
+    {
+        "id": 2,
+        "student_id": 20202020,
+        "name": "옥주용",
+        "email": "dhrwndyd@naver.com",
+        "division": "admin",
+        "week": [],
+        "notice": []
+    },
+    {
+        "id": 3,
+        "student_id": 20202121,
+        "name": "정필성",
+        "email": "wjdvlftjd@naver.com",
+        "division": "front",
+        "week": [
+            {
+                "user_id": 3,
+                "week_id": 1,
+                "weeks": 1,
+                "assignment_title": "1",
+                "submission_status": "T",
+                "assignment": [
+                    {
+                        "assignment_id": 6,
+                        "student_id": 20202121,
+                        "weeks": 1,
+                        "file": "http://127.0.0.1:8000/media/assignments/20202121/1/%E3%85%81_4DbieKI.txt",
+                        "submission_time": "2023-12-19T15:30:00Z",
+                        "week_id": 1
+                    }
+                ]
+            },
+            {
+                "user_id": 3,
+                "week_id": 7,
+                "weeks": 2,
+                "assignment_title": "1",
+                "submission_status": "F",
+                "assignment": []
+            },
+            {
+                "user_id": 3,
+                "week_id": 10,
+                "weeks": 3,
+                "assignment_title": "week3",
+                "submission_status": "F",
+                "assignment": []
+            }
+        ],
+        "notice": []
+    },
+    {
+        "id": 4,
+        "student_id": 20202222,
+        "name": "서민재",
+        "email": "tjalswo@naver.com",
+        "division": "back",
+        "week": [
+            {
+                "user_id": 4,
+                "week_id": 2,
+                "weeks": 1,
+                "assignment_title": "1",
+                "submission_status": "T",
+                "assignment": [
+                    {
+                        "assignment_id": 9,
+                        "student_id": 20202222,
+                        "weeks": 1,
+                        "file": "http://127.0.0.1:8000/media/assignments/20202222/1/%E3%85%81.txt",
+                        "submission_time": "2023-12-19T15:30:00Z",
+                        "week_id": 2
+                    }
+                ]
+            },
+            {
+                "user_id": 4,
+                "week_id": 8,
+                "weeks": 2,
+                "assignment_title": "1",
+                "submission_status": "F",
+                "assignment": []
+            },
+            {
+                "user_id": 4,
+                "week_id": 11,
+                "weeks": 3,
+                "assignment_title": "week3",
+                "submission_status": "F",
+                "assignment": []
+            }
+        ],
+        "notice": []
+    },
+    {
+        "id": 5,
+        "student_id": 20202323,
+        "name": "육종범",
+        "email": "dnrwhdqja@naver.com",
+        "division": "back",
+        "week": [
+            {
+                "user_id": 5,
+                "week_id": 3,
+                "weeks": 1,
+                "assignment_title": "1",
+                "submission_status": "F",
+                "assignment": []
+            },
+            {
+                "user_id": 5,
+                "week_id": 9,
+                "weeks": 2,
+                "assignment_title": "1",
+                "submission_status": "F",
+                "assignment": []
+            },
+            {
+                "user_id": 5,
+                "week_id": 12,
+                "weeks": 3,
+                "assignment_title": "week3",
+                "submission_status": "F",
+                "assignment": []
+            }
+        ],
+        "notice": []
+    }
+]
