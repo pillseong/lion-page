@@ -1,7 +1,10 @@
 import React from 'react';
 import Header from '../Main/header/header'
+import { useAuth } from '../Login/AuthContext';
 
 function My_info() {
+    const {loginInfo} = useAuth();
+
     return (
         <>
             <Header />

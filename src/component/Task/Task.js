@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from '../Main/header/header';
+import './Task.css'
+import { useAuth } from '../Login/AuthContext';
 
 const Task = () => {
+  const { loginInfo, setLoginInfo } = useAuth();
+
   const [assignments, setAssignments] = useState([]);
   const [selectedAssignment, setSelectedAssignment] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
@@ -135,7 +139,7 @@ const Task = () => {
   return (
     <>
         <Header />
-        <div>
+        <div className='task_main_container'>
         <h1>과제 목록</h1>
         <ul>
             {assignments.map(assignment => (

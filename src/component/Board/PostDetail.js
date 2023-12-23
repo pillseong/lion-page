@@ -2,7 +2,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../Main/header/header';
-import './PostDetail.css'; // 필요에 따라 스타일 파일 경로를 수정하세요.
+import './PostDetail.css'; 
 import boardData from '../../Board.json';
 
 function PostDetail() {

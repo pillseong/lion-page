@@ -4,10 +4,13 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../Main/header/header';
 import './Board.css';
+import { useAuth } from '../Login/AuthContext';
 
 import boardData from '../../Board.json';
 
 function Board() {
+  const { loginInfo } = useAuth();
+
   const [selectedBoard, setSelectedBoard] = useState('free');
   const [selectedPost, setSelectedPost] = useState(null);
   const [comment, setComment] = useState('');

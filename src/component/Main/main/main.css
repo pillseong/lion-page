@@ -23,3 +23,11 @@
     background-color: skyblue;
     color: black;
   }
+
+.commit_data {
+    margin-top: 30vh;
+    color: white;
+    font-size: 2vw;
+    display: flex;
+    justify-content: space-between;
+}

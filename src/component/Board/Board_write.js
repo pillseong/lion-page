@@ -8,7 +8,7 @@ import Header from '../Main/header/header';
 
 function Board_Write() {
     // 상태 변수 초기화
-    const [movieContent, setMoviecontent] = useState({
+    const [movieContent, setMovieContent] = useState({
         title: '',
         content: ''
     });
@@ -19,7 +19,7 @@ function Board_Write() {
     // 입력 폼 값 변경 시 호출되는 함수
     const getValue = (e) => {
         const { name, value } = e.target;
-        setMoviecontent((prevContent) => ({
+        setMovieContent((prevContent) => ({
             ...prevContent,
             [name]: value
         }));
@@ -41,9 +41,9 @@ function Board_Write() {
             // CKEditor 데이터 초기화
             editor.setData('');
         }
-        
+
         // 제목 및 내용 초기화
-        setMoviecontent({ title: '', content: '' });
+        setMovieContent({ title: '', content: '' });
     };
 
     return (
@@ -58,7 +58,7 @@ function Board_Write() {
                             <div key={index}>
                                 <h2>{element.title}</h2>
                                 <div>{element.content}</div>
-                                <hr/>
+                                <hr />
                             </div>
                         ))}
                     </div>
@@ -84,7 +84,7 @@ function Board_Write() {
                         onChange={(event, editor) => {
                             // CKEditor 데이터 변경 시 호출되는 함수
                             const data = editor.getData();
-                            setMoviecontent((prevContent) => ({
+                            setMovieContent((prevContent) => ({
                                 ...prevContent,
                                 content: data
                             }));

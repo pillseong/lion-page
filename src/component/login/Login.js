@@ -1,50 +1,80 @@
 import React, { useState } from "react";
+import axios from "axios";
 import Header from "../Main/header/header";
+import { useAuth } from "./AuthContext";
+import './Login.css';
 
 function Login() {
-  const [userData, setuserData] = useState({
+  const { setLoginInfo } = useAuth();
+
+  const [userData, setUserData] = useState({
     id: "",
     pw: "",
   });
-  //폼 동작 시 새로 고침 현상 막음
-  //콘솔 창에 로그인 정보 저장
-  const FormEvent = (event) => {
+
+  const [studentInfo, setStudentInfo] = useState(null);
+
+  // 폼 동작 시 새로 고침 현상 막음
+  // 콘솔 창에 로그인 정보 및 학생 정보 저장
+  const FormEvent = async (event) => {
     event.preventDefault();
 
-    console.log("ID:", userData.id);
-    console.log("PW:", userData.pw);
+    try {
+      // 로그인 요청
+      const loginResponse = await axios.post("http://127.0.0.1:8000/login/", {
+        id: userData.id,
+        pw: userData.pw,
+      });
+
+      console.log("Login Response:", loginResponse.data);
+      setLoginInfo(loginResponse.data);
+
+      // 로그인 성공 시 학생 정보 요청
+      const studentInfoResponse = await axios.get(
+        `http://127.0.0.1:8000/student_info/${loginResponse.data.id}/`
+      );
+
+      console.log("Student Info Response:", studentInfoResponse.data);
+      setStudentInfo(studentInfoResponse.data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
-  const changeid = (value) => {
-    setuserData({ ...userData, id: value });
+
+  const changeId = (value) => {
+    setUserData({ ...userData, id: value });
   };
-  const changepw = (value) => {
-    setuserData({ ...userData, pw: value });
+
+  const changePw = (value) => {
+    setUserData({ ...userData, pw: value });
   };
 
   return (
     <>
       <Header />
-      <div className='login_Border'>
-        <div className='login state'>
+      <div className="login_Border">
+        <div className="login_state">
           <form onSubmit={FormEvent}>
-            <label htmlFor='id '>ID:</label>
+            <label htmlFor="id">ID:</label>
             <input
-              type='text'
-              id='id'
-              name='id'
+              type="text"
+              id="id"
+              name="id"
               value={userData.id}
-              onChange={(e) => changeid(e.target.value)}
+              onChange={(e) => changeId(e.target.value)}
             />
-            <label htmlFor='pw'>PW:</label>
+
+            <label htmlFor="pw">PW:</label>
             <input
-              type='password'
-              id='pw'
-              name='pw'
+              type="password"
+              id="pw"
+              name="pw"
               value={userData.pw}
-              onChange={(e) => changepw(e.target.value)}
+              onChange={(e) => changePw(e.target.value)}
             />
-            <div className='login_Buttton'>
-              <button type='submit'>login</button>
+
+            <div className="login_Button">
+              <button type="submit">Login</button>
             </div>
           </form>
         </div>
@@ -52,4 +82,5 @@ function Login() {
     </>
   );
 }
+
 export default Login;
