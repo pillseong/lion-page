@@ -2,11 +2,11 @@ import "./main.css"
 import Header from '../header/header';
 import React, { useState, useEffect } from 'react';
 import CommitInfo from './CommitInfo';
-import { useAuth } from "../../Login/AuthContext";
+// import { useAuth } from "../../Login/AuthContext";
 
 function Main() {
     const [commitData, setCommitData] = useState([]);
-    const { loginInfo } = useAuth();
+    // const { loginInfo } = useAuth();
     
     useEffect(() => {
         const fetchData = async () => {

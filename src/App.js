@@ -17,6 +17,8 @@ import BoardWrite from './component/Board/Board_write';
 
 import Test from './component/Board/Board_test';
 
+import Board_Edit from './component/Board/Board_edit';
+
 function App() {
     return (
         <AuthProvider>
@@ -26,6 +28,7 @@ function App() {
                     
                     <Route path="/Board" element={<Board />} />
                     <Route path="/BoardWrite" element={<BoardWrite />} />
+                    <Route path="/boardEdit/:id" element={<Board_Edit />} />
 
                     <Route path="/Introduction" element={<Introduction />} />
                     <Route path='/IntroductionWrite' element={<IntroductionWrite />} />

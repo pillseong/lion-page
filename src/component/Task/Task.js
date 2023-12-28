@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from '../Main/header/header';
 import './Task.css'
-import { useAuth } from '../Login/AuthContext';
+// import { useAuth } from '../Login/AuthContext';
 
 const Task = () => {
-  const { loginInfo, setLoginInfo } = useAuth();
+  // const { loginInfo, setLoginInfo } = useAuth();
 
   const [assignments, setAssignments] = useState([]);
   const [selectedAssignment, setSelectedAssignment] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [weekList, setWeekList] = useState([]);
   const [userAssignments, setUserAssignments] = useState([]); // 사용자 과제 목록 추가
+  console.log(weekList);
 
   useEffect(() => {
     // 과제 목록 조회

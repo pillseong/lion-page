@@ -7,10 +7,10 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import './IntroductionWrite.css'; 
-import { useAuth } from '../Login/AuthContext';
+// import { useAuth } from '../Login/AuthContext';
 
 function IntroductionWrite() {
-  const { loginInfo } = useAuth();
+  // const { loginInfo } = useAuth();
   const student_id = "20202020";
   const address = "http://172.20.10.7:3000/";
   
