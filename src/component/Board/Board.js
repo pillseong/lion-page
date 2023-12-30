@@ -23,11 +23,12 @@ function Board() {
   const [editedQuestionContent, setEditedQuestionContent] = useState('');
   const [questionId, setQuestionId] = useState(null);
   const [selectedCommentId, setSelectedCommentId] = useState(null);
+  const [address, setAddress] = useState("http://13.124.78.53:8000/qna/questions"); // 초기 주소 설정
 
   
 
 
-  const address = "http://13.124.78.53:8000/qna/questions";
+  
   const navigate = useNavigate();
   useEffect(() => {
     const fetchBoardData = async () => {
@@ -40,7 +41,17 @@ function Board() {
       }
     };
     fetchBoardData();
-  }, [showMyPosts]);
+  }, [showMyPosts,]);
+  const setBoardType = (type) => {
+    setSelectedBoard(type);
+  };
+
+  const handleBoardTypeChange = (type) => {
+    setBoardType(type);
+    setAddress(`http://13.124.78.53:8000/${type}/questions`);
+  };
+
+  
 
   const handleMyPostsCheckboxChange = () => {
     setShowMyPosts(!showMyPosts);
@@ -75,6 +86,7 @@ function Board() {
   const handlePostClick = async (postId) => {
     setAnswers([]); // 답변 목록 초기화
     if (board && board.find((post) => post.id === postId)) {
+      setAnswers([]); 
       setSelectedPost(postId);
       setIsModalOpen(true);
       setIsEditMode(false);
@@ -83,6 +95,7 @@ function Board() {
       setSelectedPost(null);
       setIsModalOpen(false);
       setPostDetails(null);
+      setAnswers([]); 
     }
   };
 
@@ -222,8 +235,8 @@ function Board() {
       <h1 className="Board_title">여긴 게시판 페이지</h1>
       <div className='choice_button'>
         <div className="Board_buttons">
-          <button onClick={() => setSelectedBoard('free')}>자유게시판</button>
-          <button onClick={() => setSelectedBoard('QnA')}>QnA게시판</button>
+        <button onClick={() => handleBoardTypeChange('qna')}>자유게시판</button>
+         <button onClick={() => handleBoardTypeChange('free')}>QnA게시판</button>
           <label>
               <input
                  type="checkbox"

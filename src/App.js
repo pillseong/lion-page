@@ -21,6 +21,7 @@ import Board_Edit from './component/Board/Board_edit';
 
 function App() {
     return (
+    <div className='container'>
         <AuthProvider>
             <BrowserRouter>
                 <Routes>
@@ -42,6 +43,7 @@ function App() {
                 </Routes>
             </BrowserRouter>
         </AuthProvider>
+        </div>
     );
 }
 

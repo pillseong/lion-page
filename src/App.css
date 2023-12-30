@@ -1,6 +1,5 @@
-body {
+body{
+    background-color: #282828;
     margin: 0;
     padding: 0;
-    background: rgba(0, 0, 0, 0.7) url('../public/images/Background1.png') center/cover no-repeat;
-    height: 30vh;
 }
